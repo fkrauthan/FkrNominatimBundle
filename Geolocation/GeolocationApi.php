@@ -13,9 +13,15 @@
 		 */
 		protected $userAgent;
 		
+		/**
+		 * Local for request
+		 */
+		protected $local;
 		
-		public function __construct($appName, $appMail) {
+		
+		public function __construct($appName, $appMail, $request) {
 			$this->userAgent = 'FkrNominatimBundle '.$appName.' - '.$appMail;
+			$this->local = $request->getLocale();
 		}
 		
 		/**
@@ -25,6 +31,15 @@
 		 */
 		public function setUserAgent($userAgent) {
 			$this->userAgent = $userAgent;
+		}
+		
+		/**
+		 * Set the local
+		 * 
+		 * @param string $local The local
+		 */
+		public function setLocal($local) {
+			$this->local = $local;
 		}
 		
 		
@@ -43,7 +58,7 @@
 		
 		protected function request($address) {
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, 'http://nominatim.openstreetmap.org/search?q='.urlencode($address).'&format=json&addressdetails=1');
+			curl_setopt($ch, CURLOPT_URL, 'http://nominatim.openstreetmap.org/search?q='.urlencode($address).'&format=json&addressdetails=1&accept-language='.urlencode($local));
 			curl_setopt($ch, CURLOPT_HEADER, 0);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_USERAGENT, $this->userAgent);

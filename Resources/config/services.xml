@@ -14,6 +14,7 @@
         <service id="fkr_nominatim.geolocation_api" class="%fkr_nominatim.geolocation_api.class%">
 			<argument>%fkr_nominatim.app.name%</argument>
 			<argument>%fkr_nominatim.app.mail%</argument>
+			<argument>@request</argument>
 		</service>
     </services>
 </container>

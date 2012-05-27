@@ -11,10 +11,10 @@
     </parameters>
 
     <services>
-        <service id="fkr_nominatim.geolocation_api" class="%fkr_nominatim.geolocation_api.class%">
+        <service id="fkr_nominatim.geolocation_api" class="%fkr_nominatim.geolocation_api.class%" scope="request">
 			<argument>%fkr_nominatim.app.name%</argument>
 			<argument>%fkr_nominatim.app.mail%</argument>
-			<argument>@request</argument>
+			<argument type="service" id="request" />
 		</service>
     </services>
 </container>

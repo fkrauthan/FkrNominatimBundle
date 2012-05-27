@@ -58,7 +58,7 @@
 		
 		protected function request($address) {
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, 'http://nominatim.openstreetmap.org/search?q='.urlencode($address).'&format=json&addressdetails=1&accept-language='.urlencode($local));
+			curl_setopt($ch, CURLOPT_URL, 'http://nominatim.openstreetmap.org/search?q='.urlencode($address).'&format=json&addressdetails=1&accept-language='.urlencode($this->local));
 			curl_setopt($ch, CURLOPT_HEADER, 0);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_USERAGENT, $this->userAgent);

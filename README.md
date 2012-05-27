@@ -76,7 +76,7 @@ Configuration
 Usage
 =====
 
-To get a driver specific Imagine class instance just use the following code
+To get a GeolocationApi class instance just use the following code
 
 	$this->get('fkr_nominatim.geolocation_api')->locateAddress('My Street, 8888 MyCity');
 	$this->get('fkr_nominatim.geolocation_api')->locateAddress(array('My Street', '8888', 'MyCity'));

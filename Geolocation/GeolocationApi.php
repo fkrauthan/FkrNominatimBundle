@@ -38,12 +38,12 @@
 				$address = substr($address, 2);
 			}
 			
-			return $this->request(str_replace(' ', '%20', $address));
+			return $this->request($address);
 		}
 		
 		protected function request($address) {
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, 'http://nominatim.openstreetmap.org/search?q='.$address.'&format=json&addressdetails=1');
+			curl_setopt($ch, CURLOPT_URL, 'http://nominatim.openstreetmap.org/search?q='.urlencode($address).'&format=json&addressdetails=1');
 			curl_setopt($ch, CURLOPT_HEADER, 0);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_USERAGENT, $this->userAgent);

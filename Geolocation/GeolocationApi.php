@@ -2,9 +2,7 @@
 	namespace Fkr\NominatimBundle\Geolocation;
 	
 	use Fkr\NominatimBundle\Entity\Location;
-	use Buzz\Browser;
-	use Buzz\Client\MultiCurl as CurlClient;
-
+	
 
 	class GeolocationApi {
 		

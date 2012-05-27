@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="fkr_nominatim.geolocation_api.class">Fkr\NominatimBundle\Geolocation\GeolocationApi</parameter>
+        <parameter key="fkr_nominatim.app.name">%fkr_nominatim.app.name%</parameter>
+        <parameter key="fkr_nominatim.app.mail">%fkr_nominatim.app.mail%</parameter>
+    </parameters>
+
+    <services>
+        <service id="fkr_nominatim.geolocation_api" class="%fkr_nominatim.geolocation_api.class%">
+			<argument>%fkr_nominatim.app.name%</argument>
+			<argument>%fkr_nominatim.app.mail%</argument>
+		</service>
+    </services>
+</container>

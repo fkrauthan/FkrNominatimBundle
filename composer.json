@@ -1,0 +1,22 @@
+{
+	"name": "fkr/nominatim-bundle",
+	"type": "symfony-bundle",
+	"description": "Integrates nominatim api (Geolocation API based on OpenStreetMap) into Symfony2",
+	"keywords": ["geo", "geolocation", "Symfony Bundle", "open street map", "nominatim"],
+	"homepage": "https://github.com/fkrauthan/FkrNominatimBundle",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Florian Krauthan",
+			"email": "fkrauthan@gmx.net"
+		}
+	],
+	"require": {
+		"php": ">=5.3.2",
+		"symfony/framework-bundle": "2.1.*",
+	},
+	"autoload": {
+		"psr-0": { "Fkr\\NominatimBundle": "" }
+	},
+	"target-dir": "Fkr/NominatimBundle"
+}

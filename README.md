@@ -21,7 +21,7 @@ This can be done in three different ways:
 **Method #1**) Use composer
 
     "require": {
-        "fkr/nominatim-bundle": "1.0.*"
+        "fkr/nominatim-bundle": "*"
     }
 
 
